@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    font-family: 'input-mono', monospace;
+  }
+  a {
+    text-decoration: dotted underline;
+    color: unset;
+  }
+  #updates-content>a:hover, #info>a:hover {
+    text-decoration: underline;
+    background-color: white;
+  }
+
+  body {
+    padding: 2em;
+    color: #494949;
+    background-color: aliceblue;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  h1 {
+    font-family:"Baskerville", monospace;
+    font-size: 1.4em;
+    font-weight: 400;
+    margin: 0.5em 0 0.5em 0;
+  }
+
+  #buttons {
+    margin: 1em 0 0 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .container > * {
+    width: 300px;
+  }
+
+  #gardengif {
+    width: 80px;
+    height: 80px;
+    border: none;
+  }
+
+  #input-message {
+    font-size: 0.7em;
+    margin: 1em 0 0.5em 0;
+    
+  }
+  #updates {
+    font-size: 0.7em;
+    margin-bottom: 2em;
+  }
+  #updates-content {
+    width:300px;
+    text-decoration: unset;
+  }
+  
+  img,
+  canvas {
+    background-color: white;
+    margin: 0;
+    max-width: 500px;
+    border: 1px dashed black;
+    /* image-rendering:pixelated; */
+  }
+  
+  /* form {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  input.btn {
+    flex: 0.8;
+  }
+  
+  button.btn {
+    flex: 0.15;
+  }
+  
+  #posts {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  } */
+
+  #enter {
+  }
+  
+  #buttons {
+    margin: 1em 0 0 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  button {
+    border: 1px solid black;
+    background: white;
+  }
+
+  input#name {
+    width: 75%;
+    height: 2.4em;
+    border: 1px solid #494949;
+    background: white;
+    padding-left: 0.5em;
+    
+  }
+
+  button#go {
+    width: 4em;
+    height: 2.4em;
+    float: right;
+  }
+
+  #buttons>button {
+    padding: 0.5em;
+  }
+
+  #info {
+    position: absolute;
+    font-weight: 100;
+    font-size: 0.4em;
+    bottom: 1.5em;
+    right: 2em;
+    color:#494949;
+    text-align: end;
+    line-height: 1em;
+  }
+  
