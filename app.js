@@ -5,6 +5,10 @@ require('dotenv').config()
 
 const app = express();
 
+// map widget
+
+
+// guestbook
 const upload_folder = "guestbook";
 app.use(express.static("public"));
 

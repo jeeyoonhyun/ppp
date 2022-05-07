@@ -48,6 +48,11 @@ body {
     left: 40px;
 }
 
+#map {
+    top:300px;
+    left:400px;
+}
+
 #buttons {
     margin: 0;
 }
