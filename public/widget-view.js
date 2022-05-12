@@ -12,4 +12,10 @@ const createPostWidget = element => {
   container.appendChild(node)
 }
 
-createPostWidget();
+
+window.addEventListener("keyup", (e) => {
+  if (e.key === "ArrowRight") {
+    console.log("Right key pressed!")
+    createPostWidget();
+  }
+})
