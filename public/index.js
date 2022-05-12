@@ -1,6 +1,7 @@
 // socket.io
 // Open and connect socket
 let socket = io();
+let mouseX, mouseY, prevMouseX, prevMouseY;
 
 // Listen for when the socket connects
 socket.on("connect", function () {
@@ -8,15 +9,24 @@ socket.on("connect", function () {
     console.log("Client connected");
 });
 
+
+window.addEventListener('mousemove', e => {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+})
+
 // emit mouse position every 500ms
-window.setInterval((socket) => {
-    // track mouse position
-
+window.setInterval(() => {
     // emit mouse position
-    if (prevMouseX !== x || !prevMouseY !== y) {
-        socket.emit('mouse_position', { mx: x, my: y });
+    if (prevMouseX !== mouseX || !prevMouseY !== mouseY) {
+        socket.emit("mousemove", { id: socket.id, mx: mouseX, my: mouseY });
     }
-}, 500)
+    prevMouseX = mouseX;
+    prevMouseY = mouseY;
+}, 1000)
 
 
-// draw mouse on screen
+// draw mouses on screen
+socket.on("mouseupdate", data => {
+    console.log(data);
+})
