@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
     font-family: 'input-mono', monospace;
+    cursor: none !important;
 }
 
 body {
-    cursor:none;
     background: cornflowerblue;
     margin: 0;
     padding: 0;
