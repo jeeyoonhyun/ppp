@@ -5,12 +5,15 @@
 }
 
 body {
+    overflow: hidden;
     background: cornflowerblue;
     margin: 0;
     padding: 0;
 }
 
 .widget {
+    /* by default, widgets are hidden */
+    visibility: hidden;
     position: absolute;
     width: 300px;
     height: 300px;
@@ -31,26 +34,6 @@ body {
     outline: 2px solid black;
     background: white;
     height: 275px;
-}
-
-#welcome{
-    top: 100px;
-    left: 500px;
-}
-
-#hi {
-    top: 100px;
-    left: 0px;
-}
-
-#garden {
-    top: 450px;
-    left: 40px;
-}
-
-#map {
-    top:300px;
-    left:400px;
 }
 
 #buttons {

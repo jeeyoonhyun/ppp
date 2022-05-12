@@ -12,7 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=VT323&display=swap">
   <link rel="stylesheet" href="https://use.typekit.net/fuu4stx.css" rel="stylesheet">
   <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
-  <script>var socket = io()</script>
   <link rel="stylesheet" href="./widget-view.css" />
 
 </head>
@@ -20,7 +19,7 @@
 <body>
   <div class="container">
     <!-- post widget 1 -->
-    <div class="widget post" id="welcome">
+    <div class="widget post post01" id="welcome">
       <div class="statusbar">
         post
       </div>
@@ -29,15 +28,41 @@
       </div>
     </div>
     <!-- post widget 2 -->
-    <div class="widget post" id="hi">
+    <div class="widget post post02" id="hi">
       <div class="statusbar">
-        post
+        post 2
       </div>
       <div class="widget-content">
         hi there
       </div>
     </div>
 
+    <!-- garden widget -->
+    <div class="widget garden" id="garden">
+      <div class="statusbar">
+        garden
+      </div>
+      <div class="widget-content">
+      <canvas id="canvas"></canvas>
+      <div id="buttons">
+        <!-- <button id="undo">undo</button> -->
+        <button id="reset">
+          reset
+        </button>
+        <p id="message"></p>
+      </div>
+      </div>
+    </div>
+
+    <!-- map widget -->
+    <div class="widget map" id="map">
+      <div class="statusbar">
+        map
+      </div>
+      <div class="widget-content">
+        Welcome to my home page
+      </div>
+    </div>
   </div>
 </body>
 

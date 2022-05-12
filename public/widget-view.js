@@ -12,10 +12,19 @@ const createPostWidget = element => {
   container.appendChild(node)
 }
 
-
+let widgets = ['post01','post02','garden','map']
+let count = 0;
 window.addEventListener("keyup", (e) => {
   if (e.key === "ArrowRight") {
     console.log("Right key pressed!")
-    createPostWidget();
+    // hide all the other widgets
+    for (let i=0; i <widgets.length; i++) {
+      document.querySelector(`.${widgets[i]}`).style.visibility = 'hidden';
+    }
+    // show only current widget
+    document.querySelector(`.${widgets[count % widgets.length]}`).style.visibility = 'visible';
+    count++;
   }
 })
+
+
