@@ -37,14 +37,13 @@ const makeDraggable = element => {
     activeElement.style.top = e.pageY - yOffset + "px";
 
     //TODO: restrict position so that it doesn't go outside the window size
-    console.log('moving' + activeElement.innerText);
+    // console.log('moving' + activeElement.innerText);
   });
   
   
   element.addEventListener("mousedown", (e) => {
     e.preventDefault(); //prevent dragging element
     let bounds = e.currentTarget.parentElement.getBoundingClientRect(); //object having the position / bounds
-    console.log(bounds);
     xOffset = e.pageX - bounds.left;
     yOffset = e.pageY - bounds.top;
     console.log(e.currentTarget.parentElement); //tells which element the event was sent to
@@ -54,18 +53,15 @@ const makeDraggable = element => {
   }); 
   
   element.addEventListener("mouseup", (e) => {
-    console.log('mouseup')
     activeElement = null;
   });
 
 
   document.documentElement.addEventListener('mouseleave', e => {
-    console.log('out')
     activeElement = null;
   })
   
   document.documentElement.addEventListener('mouseenter', e => {
-    console.log('in')
     activeElement = null;
   })
 }

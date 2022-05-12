@@ -1,22 +1,62 @@
 const fs = require("fs");
-const express = require("express");
 const bodyParser = require("body-parser");
+const express = require("express");
+const path = require('path')
 require('dotenv').config()
 
 const app = express();
+const port = process.env.PORT || 3000;
+const http = require('http');
 
-// map widget
+// socket.io
+const server = http.createServer(app)
+const { Server } = require('socket.io')
+const io = new Server(server);
+const clients = {};
+
+// hide .html extension
+app.use(express.static("public", {
+  index:false, 
+  extensions:['html']
+}));
+
+
+const addClient = socket => {
+  console.log("New client connected", socket.id);
+  clients[socket.id] = socket;
+};
+const removeClient = socket => {
+  console.log("Client disconnected", socket.id);
+  delete clients[socket.id];
+};
+
+// user connected
+io.on("connect", socket => {
+  let id = socket.id;
+  addClient(socket);
+
+  // mouse tracking for map widget
+  socket.on("mousemove", data => {
+    data.id = id;
+    socket.broadcast.emit('mouseupdate', data)
+  })
+ 
+  // user disconnected
+  socket.on("disconnect", socket => {
+    removeClient(socket)
+    // socket.broadcast.emit('clientdisconnect', id)
+  });
+});
 
 
 // guestbook
 const upload_folder = "guestbook";
 app.use(express.static("public"));
-
 // app.use(bodyParser.json()); //automatically parses body
 app.use(bodyParser.json({ limit: '50mb', type: 'application/json' }));
 app.use("/uploaded", express.static(upload_folder));
 
-// // get list of posts
+// get list of posts
 app.get("/posts", (req, res) => {
   fs.promises.readdir(upload_folder)
     .then(files => {
@@ -30,25 +70,26 @@ app.get("/posts", (req, res) => {
 app.post("/upload/:id", (req, res) => {
   const { image } = req.body;
   const id = req.params.id.toLowerCase().replace(/[^0-9a-zA-Z]+/g, '');
-    var base64Data = image.replace(/^data:image\/png;base64,/, "");
-    // create new directory if directory does not exist
-    let dir = `${upload_folder}`
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
-    }
+  var base64Data = image.replace(/^data:image\/png;base64,/, "");
+  // create new directory if directory does not exist
+  let dir = `${upload_folder}`
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
+  }
 
-    fs.writeFile(`${dir}/${id}.png`, base64Data, "base64", err => {
-      if (err) { console.log(err) }
-    });
+  fs.writeFile(`${dir}/${id}.png`, base64Data, "base64", err => {
+    if (err) { console.log(err) }
+  });
 
-    fs.writeFile(`${dir}/latest.png`, base64Data, "base64", err => {
-        if (err) { console.log(err) }
-      });  
+  fs.writeFile(`${dir}/latest.png`, base64Data, "base64", err => {
+    if (err) { console.log(err) }
+  });
 
-    res.json({ id: id });
-    console.log("saved " + id);
+  res.json({ id: id });
+  console.log("saved " + id);
 });
 
-// Server listener
-app.listen(3000);
-console.log("Your app is listening on port " + 3000);
+
+server.listen(port, () => {
+  console.log("Your app is listening on port " + port);
+});
