@@ -15,8 +15,8 @@ body {
     /* by default, widgets are hidden */
     visibility: hidden;
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 720px;
+    height: 720px;
     border: 2px solid black;
 }
 
@@ -25,19 +25,19 @@ body {
 }
 
 .widget>.statusbar {
-    outline: 2px solid black;
+    border: 2px solid black;
     color: white;
     background: black;
-    height: 25px;
-    padding-top: 2px;
-    padding-left: 10px;
+    height: 50px;
+    padding-top: 14px;
+    padding-left: 20px;
 }
 
 .widget>.widget-content {
-    padding: 10px;
-    outline: 2px solid black;
+    height: 666px;
+    padding: 20px;
+    border: 2px solid black;
     background: white;
-    height: 275px;
 }
 
 #buttons {
@@ -47,4 +47,9 @@ body {
 .widget.garden>.widget-content {
     margin: 0;
     padding: 0;
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
 }
