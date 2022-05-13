@@ -12,7 +12,7 @@ const createPostWidget = element => {
   container.appendChild(node)
 }
 
-let widgets = ['post01','post02','garden','map']
+let widgets = ['garden','map','post01','post02']
 let count = 0;
 window.addEventListener("keyup", (e) => {
   if (e.key === "ArrowRight") {
@@ -26,5 +26,3 @@ window.addEventListener("keyup", (e) => {
     count++;
   }
 })
-
-

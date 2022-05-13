@@ -20,6 +20,10 @@ body {
     border: 2px solid black;
 }
 
+.widget.garden {
+    visibility: visible;
+}
+
 .widget>.statusbar {
     outline: 2px solid black;
     color: white;

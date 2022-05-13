@@ -17,10 +17,11 @@
 </head>
 
 <body>
-  <div class="buttons">
+  <!-- <div class="buttons">
     <button onclick="createPostWidget()">Add post widget</button>
-  </div>
+  </div> -->
   <div class="container">
+    <canvas class="mousecanvas"></canvas>
     <!-- post widget 1 -->
     <div class="widget post" id="welcome">
       <div class="statusbar">
@@ -49,9 +50,9 @@
       <canvas id="canvas"></canvas>
       <div id="buttons">
         <!-- <button id="undo">undo</button> -->
-        <button id="reset">
+        <!-- <button id="reset">
           reset
-        </button>
+        </button> -->
         <p id="message"></p>
       </div>
       </div>
@@ -69,9 +70,9 @@
   </div>
 </body>
 
+<script src="garden.js"></script>
 <script src="index.js"></script>
 <script src="widget.js"></script>
-<script src="garden.js"></script>
 <script src="map.js"></script>
 
 </html>

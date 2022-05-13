@@ -1,7 +1,7 @@
 let canvas = document.getElementById("canvas");
 let message = document.getElementById("message");
 let undoBtn = document.getElementById("undo");
-let resetBtn = document.getElementById("reset");
+// let resetBtn = document.getElementById("reset");
 let updates = document.getElementById("updates-content");
 
 // let pixelRatio = window.devicePixelRatio;
@@ -131,10 +131,10 @@ function pushState() {
 // note: redo uses 2 stacks
 
 // reset button
-reset.addEventListener("click", e => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  message.innerText = "Canvas cleared!";
-});
+// reset.addEventListener("click", e => {
+//   ctx.clearRect(0, 0, canvas.width, canvas.height);
+//   message.innerText = "Canvas cleared!";
+// });
 
 // you might wanna use https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
@@ -209,7 +209,9 @@ function drawEnd() {
     pushState();
   }
   isDrawing = false;
-  uploadImage();
+  if (!window.location.href.includes('view')) { //do not upload in view mode
+    uploadImage();
+  }
 }
 
 // event listeners

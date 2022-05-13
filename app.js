@@ -30,23 +30,21 @@ const removeClient = socket => {
   delete clients[socket.id];
 };
 
-// object that store client mouse positions
-let mousevalues = []
+// object that stores clients' mouse positions
+let mouseValues = []
 
 // user connected
-io.on("connect", socket => {
+io.on("connection", socket => {
   let id = socket.id;
   addClient(socket);
-  mousevalues.push({id: socket.id});
+  mouseValues.push({id: socket.id});
 
   // mouse tracking for map widget
   socket.on("mousemove", data => {
-    // update object with same user id
-    let currentUserIndex = mousevalues.findIndex(e => e.id === data.id)
-    mousevalues[currentUserIndex] = data;
-    console.log(mousevalues)
-    // emit mouse values to client
-    socket.broadcast.emit("mouseupdate", mousevalues)
+    // update object that has the same user id
+    let currentUserIndex = mouseValues.findIndex(e => e.id === data.id)
+    mouseValues[currentUserIndex] = data;
+    console.log(mouseValues)
   })
  
   // user disconnected
@@ -55,6 +53,11 @@ io.on("connect", socket => {
     // socket.broadcast.emit('clientdisconnect', id)
   });
 
+  // emit mouse values to client
+  setInterval(function(){
+    socket.emit("mouseupdate", mouseValues)
+  }, 1000);
+  
 });
 
 

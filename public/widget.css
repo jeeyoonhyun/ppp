@@ -3,11 +3,17 @@
     font-family: 'input-mono', monospace;
 }
 
-body {
+body, html {
     overflow: hidden;
     background: cornflowerblue;
     margin: 0;
     padding: 0;
+    height:100%;
+}
+
+.mousecanvas {
+    z-index: 1000;
+    position:absolute;
 }
 
 .widget {

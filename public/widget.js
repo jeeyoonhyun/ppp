@@ -12,7 +12,7 @@ const createPostWidget = element => {
   container.appendChild(node)
 }
 
-createPostWidget();
+// createPostWidget();
 
 //draggable widget element
 
