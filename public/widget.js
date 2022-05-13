@@ -70,3 +70,11 @@ const makeDraggable = element => {
 for(i of document.querySelectorAll('.statusbar')) {
   makeDraggable(i)
 }
+
+// randomize widget positions
+let widgets = document.querySelectorAll('.widget')
+// randomize css
+// widgets.forEach( e => {
+//   e.style.top = `${Math.floor(Math.random()*800)}px`
+//   e.style.left = `${Math.floor(Math.random()*500)}px`
+// })

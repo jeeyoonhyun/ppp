@@ -54,23 +54,23 @@ body, html {
 }
 
 #welcome{
-    top: 100px;
-    left: 500px;
+    top: 21px;
+    left: 120px;
 }
 
 #hi {
-    top: 100px;
-    left: 0px;
+    top: 446px;
+    left: 388px;
 }
 
 #garden {
-    top: 450px;
-    left: 40px;
+    top: 369px;
+    left: 42px;
 }
 
 #map {
-    top:300px;
-    left:400px;
+    top:188px;
+    left:510px;
 }
 
 #buttons {
