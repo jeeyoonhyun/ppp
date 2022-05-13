@@ -21,6 +21,9 @@ body, html {
     height: 100%;
 } */
 
+.widget-content > img {
+    width: 100%;
+}
 .widget {
     position: absolute;
     width: 300px;
@@ -43,6 +46,11 @@ body, html {
     outline: 2px solid black;
     background: white;
     height: 275px;
+    overflow: hidden;
+}
+
+.widget>.widget-content-img {
+    padding: 0;
 }
 
 #welcome{
