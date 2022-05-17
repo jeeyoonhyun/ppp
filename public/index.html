@@ -11,7 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=VT323&display=swap">
   <link rel="stylesheet" href="https://use.typekit.net/fuu4stx.css" rel="stylesheet">
-  <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+  <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+    integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./widget.css" />
 
 </head>
@@ -41,20 +43,70 @@
       </div>
     </div>
 
+    <!-- post widget 3 -->
+    <div class="widget post post03" id="exp1">
+      <div class="statusbar">
+        post
+      </div>
+      <div class="widget-content widget-content-img">
+        <img src="./images/exp1.png" />
+      </div>
+    </div>
+
+    <!-- post widget 4 -->
+    <div class="widget post post04" id="exp2">
+      <div class="statusbar">
+        post
+      </div>
+      <div class="widget-content widget-content-img">
+        <img src="./images/exp2.png" />
+      </div>
+    </div>
+
+    <!-- post widget 5 -->
+    <div class="widget post post02" id="exp3">
+      <div class="statusbar">
+        post
+      </div>
+      <div class="widget-content widget-content-img">
+        <img src="./images/exp3.png" />
+      </div>
+    </div>
+
+    <!-- post widget 6 -->
+    <div class="widget post post06" id="exp4">
+      <div class="statusbar">
+        post
+      </div>
+      <div class="widget-content widget-content-img">
+        <img src="./images/exp4.png" />
+      </div>
+    </div>
+
+    <!-- battery widget -->
+    <div class="widget battery" id="battery">
+      <div class="statusbar">
+        battery
+      </div>
+      <div class="widget-content widget-content-img">
+        <img src="./images/battery.png" />
+      </div>
+    </div>
+
     <!-- garden widget -->
     <div class="widget garden" id="garden">
       <div class="statusbar">
         garden
       </div>
       <div class="widget-content">
-      <canvas id="canvas"></canvas>
-      <div id="buttons">
-        <!-- <button id="undo">undo</button> -->
-        <!-- <button id="reset">
+        <canvas id="canvas"></canvas>
+        <div id="buttons">
+          <!-- <button id="undo">undo</button> -->
+          <!-- <button id="reset">
           reset
         </button> -->
-        <p id="message"></p>
-      </div>
+          <p id="message"></p>
+        </div>
       </div>
     </div>
 
@@ -67,9 +119,11 @@
         <img src="./images/map_content.png" />
       </div>
     </div>
+
   </div>
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/521/fabric.min.js"></script>
 <script src="garden.js"></script>
 <script src="index.js"></script>
 <script src="widget.js"></script>

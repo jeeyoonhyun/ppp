@@ -53,24 +53,50 @@ body, html {
     padding: 0;
 }
 
+.battery {
+    height: 120px;
+}
+
+.battery>.widget-content {
+    height: 120px;
+}
+
+/* positions */
+
 #welcome{
-    top: 21px;
-    left: 120px;
+    left: 24px; top: 17px;
 }
 
 #hi {
-    top: 446px;
-    left: 388px;
+    left: 302px; top: 369px;
 }
 
 #garden {
-    top: 369px;
-    left: 42px;
+    left: 1042px; top: 363px;
 }
 
 #map {
-    top:188px;
-    left:510px;
+    left: 57px; top: 441px;
+}
+
+#exp1 {
+    left: 517px; top: 37px;
+}
+
+#exp2 {
+    left: 799px; top: 116px;
+}
+
+#exp3 {
+    left: 702px; top: 459px;
+}
+
+#exp4 {
+    left: 1110px; top: 35px;
+}
+
+#battery {
+    left: 391px; top: 614px;
 }
 
 #buttons {

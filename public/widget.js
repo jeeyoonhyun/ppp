@@ -22,7 +22,7 @@ const makeDraggable = element => {
   let xOffset = 0;
   let yOffset = 0;
 
-  let topZ = 1;
+  let topZ = element.style.zIndex;
 
   // 22-05-03: I used document.addEventListener instead of element.addEventListener because
   // when the mouse moves too fast, the mouse goes out of the element
