@@ -1,15 +1,21 @@
+var https = require('https');
 const fs = require("fs");
 const bodyParser = require("body-parser");
 const express = require("express");
 const path = require('path')
 require('dotenv').config()
 
+// HTTPS credentials
+const credentials = {
+  key:fs.readFileSync('/etc/letsencrypt/live/personalpet.page/privkey.pem'),
+  cert:fs.readFileSync('/etc/letsencrypt/live/personalpet.page/fullchain.pem')
+}
+
 const app = express();
-const port = process.env.PORT || 3000;
-const http = require('http');
+const port = process.env.PORT || 443;
 
 // socket.io
-const server = http.createServer(app)
+const server = https.createServer(credentials, app)
 const { Server } = require('socket.io')
 const io = new Server(server);
 const clients = {};
@@ -105,3 +111,10 @@ app.post("/upload/:id", (req, res) => {
 server.listen(port, () => {
   console.log("Your app is listening on port " + port);
 });
+
+// Redirect from http port 80 to https
+var http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    res.end();
+}).listen(80);
