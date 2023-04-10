@@ -1,13 +1,10 @@
 {
-  "//1": "The user upload an image, the server gives a random name, upload it and give it back to the user",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "glitch-image-hosting",
+  "name": "personal-pet-pages",
   "version": "0.0.1",
-  "description": "A simple image-hosting app for glitch",
-  "main": "server.js",
+  "description": "personal pet pages",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -21,12 +18,5 @@
   "engines": {
     "node": "12.x"
   },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express",
-    "image hosting",
-    "image"
-  ]
+  "license": "MIT"
 }
